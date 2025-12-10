@@ -1,0 +1,45 @@
+:root{--red:#ff2e2e;--white:#fff}
+
+.projects{padding-top:96px}
+.project-list{display:flex;flex-direction:column;gap:30px;align-items:center;padding:40px 20px}
+.project-card{width:80%;max-width:900px;border-radius:12px;border:1px solid rgba(255,46,46,0.08);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));padding:18px;box-shadow:0 6px 28px rgba(0,0,0,0.6)}
+.project-inner h3{margin:0 0 8px;color:var(--white)}
+.project-inner p{color:rgba(255,255,255,0.9)}
+.project-bullets{margin:12px 0 0 18px}
+
+/* Reveal + stagger */
+.project-card{opacity:0;transform:translateY(18px);transition:all .6s ease;transition-delay:var(--delay, 0ms)}
+.project-card.active, .project-card.reveal.active{opacity:1;transform:none}
+
+.project-links{margin-top:12px}
+.btn.small{padding:8px 12px}
+
+@media (max-width:900px){.project-card{width:100%;padding:14px}}
+:root{--bg:#000;--white:#fff;--red:#ff2e2e}
+
+.projects{padding-top:110px}
+.project-list{display:flex;flex-direction:column;gap:40px;align-items:center;max-width:1200px;margin:0 auto;padding:20px}
+.project-card{width:80%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;border:1px solid rgba(255,46,46,0.08);padding:28px;box-shadow:0 8px 30px rgba(0,0,0,0.6);transition:transform .28s ease,box-shadow .28s ease}
+.project-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 50px rgba(255,46,46,0.06),0 0 30px rgba(255,46,46,0.08)}
+.project-inner h3{margin:0 0 12px;color:var(--white)}
+.project-inner p{color:rgba(255,255,255,0.9);line-height:1.6}
+.project-bullets{margin:12px 0 0 18px}
+.project-links{margin-top:14px}
+
+/* Neon border glow */
+.project-card::before{content:'';position:absolute;pointer-events:none;left:50%;transform:translateX(-50%);width:82%;height:100%;border-radius:16px;z-index:0}
+
+/* Reveal animation (each card has its own reveal class) */
+.project-card{opacity:0;transform:translateY(18px) scale(.995)}
+.project-card.revealed, .project-card.reveal.active{opacity:1;transform:none}
+
+/* Staggered delays using data-index */
+.project-card[data-index="0"].reveal.active{transition-delay:0.06s}
+.project-card[data-index="1"].reveal.active{transition-delay:0.12s}
+.project-card[data-index="2"].reveal.active{transition-delay:0.18s}
+.project-card[data-index="3"].reveal.active{transition-delay:0.24s}
+
+@media (max-width:900px){
+  .project-card{width:94%;padding:18px}
+  .project-list{gap:20px}
+}

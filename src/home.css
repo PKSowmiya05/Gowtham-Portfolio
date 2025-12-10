@@ -1,0 +1,45 @@
+:root{--bg:#000;--white:#fff;--red:#ff1b1b}
+
+.site-padding{padding-top:96px}
+
+.home-layout{display:flex;gap:48px;max-width:1100px;margin:0 auto;padding:40px 20px;align-items:flex-start}
+.home-left{flex:0 0 260px;display:flex;flex-direction:column;align-items:center}
+.profile-wrap{border-radius:50%;padding:8px;border:2px solid rgba(255,27,27,0.12);box-shadow:0 0 28px rgba(255,27,27,0.12)}
+.profile{width:210px;height:210px;border-radius:50%;display:block}
+
+.left-buttons{display:flex;gap:12px;margin-top:14px}
+.left-buttons .btn{display:inline-block}
+
+.home-right{flex:1;margin-top:36px}
+.name{font-size:44px;margin:0;color:var(--white);letter-spacing:2px;text-shadow:0 0 8px rgba(255,0,0,0.5);font-weight:700}
+.subtitle{color:var(--white);margin:8px 0 18px;display:inline-block;font-weight:600;letter-spacing:1px;padding-bottom:6px;position:relative}
+.subtitle:after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(255,27,27,0.6));border-radius:2px;box-shadow:0 0 12px rgba(255,27,27,0.08)}
+
+.intro p{color:#d6d6d6;line-height:1.72;margin-bottom:12px;opacity:0;transform:translateY(8px);transition:all .6s ease}
+.intro p.reveal{opacity:1;transform:none}
+.highlight-red{color:var(--red);font-weight:700;font-style:italic}
+
+.typing-row{margin-top:8px}
+
+.stacks{margin-top:38px;display:flex;flex-direction:column;gap:48px;align-items:center}
+.stack-card{width:80%;padding:18px;border-radius:12px}
+.feature-card{border:1px solid rgba(255,27,27,0.14);box-shadow:0 0 18px rgba(255,27,27,0.06);transition:transform .18s,box-shadow .18s}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(255,27,27,0.06),0 0 18px rgba(255,27,27,0.18)}
+
+/* reveal fallback - elements have their own reveal animation via App's observer */
+.reveal{opacity:0;transform:translateY(12px);transition:all .6s ease}
+.reveal.active{opacity:1;transform:none}
+
+/* Futuristic buttons */
+.btn.futuristic{position:relative;overflow:visible;background:rgba(255,255,255,0.03);border:1px solid rgba(255,27,27,0.35);color:var(--white);padding:10px 14px;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 0 12px rgba(255,0,0,0.14);transition:transform .18s,box-shadow .18s}
+.btn.futuristic:before{content:'';position:absolute;inset:-2px;border-radius:14px;padding:2px;background:linear-gradient(90deg, rgba(255,27,27,0.18), rgba(255,27,27,0.35), rgba(255,27,27,0.18));z-index:-1;filter:blur(8px);opacity:0;transition:all .28s}
+.btn.futuristic:hover{transform:translateY(-5px);box-shadow:0 8px 28px rgba(255,27,27,0.18)}
+.btn.futuristic:hover:before{opacity:1}
+.btn.futuristic.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.btn-icon{display:inline-flex;margin-right:6px}
+
+@media (max-width:900px){
+  .home-layout{flex-direction:column;align-items:center}
+  .home-right{width:100%;margin-top:18px}
+  .stack-card{width:100%}
+}

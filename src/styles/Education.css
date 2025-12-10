@@ -1,0 +1,20 @@
+.timeline-wrapper{position:relative;padding-left:48px}
+.timeline-line{position:absolute;left:20px;top:8px;bottom:8px;width:3px;background:linear-gradient(180deg, rgba(255,46,46,0.08), rgba(255,46,46,0.18));border-radius:4px}
+
+.timeline-card{position:relative;margin:18px 0;padding-left:26px}
+.timeline-card .dot{position:absolute;left:8px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--red);box-shadow:0 0 18px rgba(255,46,46,0.18),0 0 6px rgba(255,46,46,0.06)}
+.timeline-card .content{margin-left:8px}
+.timeline-card h3{margin:0 0 6px;color:var(--white)}
+.timeline-card .small{font-size:13px}
+
+/* Make sure timeline cards reveal nicely */
+.timeline-card{opacity:0;transform:translateX(18px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+.reveal.active .timeline-card{opacity:1;transform:none}
+
+@media (max-width:900px){
+	.timeline-wrapper{padding-left:20px}
+	.timeline-line{left:8px}
+	.timeline-card{padding-left:18px}
+	.timeline-card .dot{left:0}
+}
+

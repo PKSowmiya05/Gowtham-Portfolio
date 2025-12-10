@@ -1,0 +1,6 @@
+.nav-inner{align-items:center}
+.nav-toggle{width:36px;height:36px;display:flex;flex-direction:column;justify-content:space-around}
+.nav-toggle span{display:block;height:3px;background:var(--white);border-radius:3px}
+.nav-links .nav-item{position:relative}
+.nav-item::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:transparent;transition:all .2s}
+.nav-item:hover::after{background:var(--red);box-shadow:0 0 10px var(--red)}

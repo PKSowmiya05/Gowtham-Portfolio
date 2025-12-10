@@ -1,0 +1,48 @@
+.about-vertical{display:flex;flex-direction:column;align-items:center;gap:28px}
+.about-vertical .about-card{width:75%;max-width:880px;margin:0 auto;padding:20px;border-radius:20px}
+
+/* WHO AM I */
+.whoami{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,46,46,0.06);box-shadow:0 8px 28px rgba(255,46,46,0.03);backdrop-filter:blur(6px)}
+.who-title{font-size:20px;color:var(--red);letter-spacing:2px;text-transform:uppercase;text-align:center;text-shadow:0 0 12px rgba(255,46,46,0.16)}
+.who-text{color:var(--white);line-height:1.6;margin-top:12px}
+.who-meta{display:flex;justify-content:space-between;margin-top:14px;color:rgba(255,255,255,0.85);font-weight:600}
+
+/* Technical Skills - tilted parallelogram with inner straight content */
+.skills-panel{display:flex;justify-content:center}
+.skills-tilt{width:75%;transform:skewX(-12deg);background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border-radius:12px;position:relative;padding:12px}
+.skills-tilt:before{content:'';position:absolute;inset:-2px;border-radius:14px;background:linear-gradient(90deg, rgba(255,46,46,0.06), rgba(255,46,46,0.12));filter:blur(8px);opacity:0.7;transition:all .28s}
+.skills-tilt:hover:before{filter:blur(18px);opacity:1;transform:scale(1.02)}
+.skills-content{transform:skewX(12deg);padding:18px}
+.skills-title{text-align:center;color:var(--red);letter-spacing:1.6px;text-transform:uppercase;text-shadow:0 0 10px rgba(255,46,46,0.12)}
+.skills-meta{display:flex;flex-direction:column;gap:6px;margin-top:10px;color:rgba(255,255,255,0.95);font-weight:700;text-align:center}
+.skills-meta-card{width:68%;margin:16px auto 0;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,46,46,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.6),0 0 26px rgba(255,46,46,0.04);display:flex;flex-direction:column;gap:8px;align-items:center}
+.skills-domain,.skills-tools{background:rgba(0,0,0,0.45);padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);width:100%;text-align:center;color:var(--white);font-weight:700}
+.skills-domain strong,.skills-tools strong{color:var(--red);margin-right:6px}
+
+/* New skills grid: 3 rows (2 | 2 | 1) centered */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;margin-top:12px;align-items:center;justify-items:center}
+.skill-box{width:100%;max-width:420px;background:rgba(0,0,0,0.45);padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);color:var(--white);font-weight:700;text-align:center;transition:transform .22s,box-shadow .22s}
+.skill-box.full{grid-column:1 / -1;width:88%;}
+.skill-box:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(255,46,46,0.08),0 0 18px rgba(255,46,46,0.06);border-color:rgba(255,46,46,0.12)}
+.skills-tilt:hover .skill-box{box-shadow:0 14px 44px rgba(255,46,46,0.12)}
+
+/* ensure equal widths for the two columns */
+.skills-grid > .skill-box{flex:0 0 100%}
+
+/* Robotics / Embedded panel with vertical neon left strip */
+.robotics-panel{width:75%;max-width:880px;position:relative;border-radius:20px;padding:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 36px rgba(0,0,0,0.6),0 0 28px rgba(255,46,46,0.04);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px)}
+.robotics-panel:before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:6px;border-radius:6px;background:linear-gradient(180deg,var(--red),rgba(255,46,46,0.6));box-shadow:0 0 28px rgba(255,46,46,0.14);transform:translateX(-2px);transition:all .28s}
+.robotics-panel:hover:before{transform:translateX(0);box-shadow:0 0 36px rgba(255,46,46,0.2)}
+.robotics-title{color:var(--red);text-transform:uppercase;letter-spacing:1.6px}
+.robotics-inner{margin-left:14px}
+
+/* equal spacing and responsiveness */
+.reveal{opacity:0;transform:translateY(12px);transition:all .8s cubic-bezier(.2,.9,.2,1)}
+.reveal.active{opacity:1;transform:none}
+
+@media (max-width:980px){
+	.about-vertical .about-card{width:92%}
+	.skills-content{padding:12px}
+		.skills-grid{grid-template-columns:1fr}
+	.who-meta{flex-direction:column;gap:8px}
+}
